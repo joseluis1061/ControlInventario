@@ -3,7 +3,20 @@
     <persistence-unit name="persistenceInventory" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--Tables-->
-        <class></class>
+        <class>
+            org.jlz.entity.Almacenes
+            org.jlz.entity.Categorias
+            org.jlz.entity.Clientes
+            org.jlz.entity.Inventario
+            org.jlz.entity.OrdenesDeCompra
+            org.jlz.entity.OrdenesDeVenta
+            org.jlz.entity.ProductoOrdenesDeVentas
+            org.jlz.entity.Productos
+            org.jlz.entity.ProductosOrdenesDeCompras
+            org.jlz.entity.ProductosProveedores
+            org.jlz.entity.Proveedores
+            org.jlz.entity.Usuarios
+        </class>
         
         <properties>
             <!-- Url de la BD-->
