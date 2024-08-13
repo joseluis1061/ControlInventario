@@ -1,6 +1,6 @@
 package org.jlz.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "productos")
@@ -27,7 +27,7 @@ public class Productos {
   private int cantidad;
 
   @ManyToOne
-  @Column(name = "id_categoria")
+  @JoinColumn(name = "id_categoria")
   private Categorias categoria;
 
   @Column(name = "unidad_de_medida")

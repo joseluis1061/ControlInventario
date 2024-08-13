@@ -1,6 +1,6 @@
 package org.jlz.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -20,8 +20,8 @@ public class OrdenesDeCompra {
   @Column(name = "total")
   private Float total;
 
-  @ManyToOne
-  @Column(name = "id_proveedor")
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "id_proveedor", nullable = false)
   private Proveedores proveedor;
 
   //Contructors

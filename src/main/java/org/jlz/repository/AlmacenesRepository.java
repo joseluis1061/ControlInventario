@@ -5,13 +5,13 @@ import java.util.List;
 import org.jlz.entity.Almacenes;
 import org.jlz.util.UtilEntity;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 public class AlmacenesRepository implements Repository<Almacenes> {
   private final EntityManager entityManager;
   // Constructor
   public AlmacenesRepository() {
-    entityManager = UtilEntity.getEntityManager();
+    entityManager = UtilEntity.getEntityManagerFactory();
   }
 
   @Override

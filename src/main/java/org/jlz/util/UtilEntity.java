@@ -1,8 +1,8 @@
 package org.jlz.util;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class UtilEntity {
 
@@ -21,7 +21,7 @@ public class UtilEntity {
     }
   }
   // Método público para obtener un nuevo EntityManager
-  public static EntityManager getEntityManager() {
+  public static EntityManager getEntityManagerFactory() {
     // Crea y retorna un nuevo EntityManager usando el EntityManagerFactory
     return entityManagerFactory.createEntityManager();
   }

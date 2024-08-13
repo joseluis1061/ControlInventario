@@ -1,6 +1,6 @@
 package org.jlz.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "productos_proveedores")
@@ -13,11 +13,11 @@ public class ProductosProveedores {
   private Long idProductosProveedores;
 
   @ManyToOne
-  @Column(name = "id_producto")
+  @JoinColumn(name = "id_producto")
   private Productos producto;
 
   @ManyToOne
-  @Column(name = "id_proveedor")
+  @JoinColumn(name = "id_proveedor")
   private Proveedores proveedor;
 
   //Contructors

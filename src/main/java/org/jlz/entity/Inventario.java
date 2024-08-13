@@ -2,7 +2,7 @@ package org.jlz.entity;
 
 import jakarta.validation.constraints.Min;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 
@@ -83,6 +83,7 @@ public class Inventario {
   public void setCantidadDisponible(@Min(value = 0, message = "La cantidad disponible debe ser mayor o igual a cero") int cantidadDisponible) {
     this.cantidadDisponible = cantidadDisponible;
   }
+
 
   public Date getFechaMovimiento() {
     return fechaMovimiento;

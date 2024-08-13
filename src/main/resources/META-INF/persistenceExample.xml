@@ -1,32 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
     <persistence-unit name="persistenceInventory" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <!--Tables-->
-        <class>
-            org.jlz.entity.Almacenes
-            org.jlz.entity.Categorias
-            org.jlz.entity.Clientes
-            org.jlz.entity.Inventario
-            org.jlz.entity.OrdenesDeCompra
-            org.jlz.entity.OrdenesDeVenta
-            org.jlz.entity.ProductoOrdenesDeVentas
-            org.jlz.entity.Productos
-            org.jlz.entity.ProductosOrdenesDeCompras
-            org.jlz.entity.ProductosProveedores
-            org.jlz.entity.Proveedores
-            org.jlz.entity.Usuarios
-        </class>
-        
+        <class>org.jlz.entity.Almacenes</class>
+        <class>org.jlz.entity.Categorias</class>
+        <class>org.jlz.entity.Clientes</class>
+        <class>org.jlz.entity.Inventario</class>
+        <class>org.jlz.entity.OrdenesDeCompra</class>
+        <class>org.jlz.entity.OrdenesDeVenta</class>
+        <class>org.jlz.entity.ProductoOrdenesDeVentas</class>
+        <class>org.jlz.entity.Productos</class>
+        <class>org.jlz.entity.ProductosOrdenesDeCompras</class>
+        <class>org.jlz.entity.ProductosProveedores</class>
+        <class>org.jlz.entity.Proveedores</class>
+        <class>org.jlz.entity.Usuarios</class>
         <properties>
-            <!-- Url de la BD-->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/nombreBD"/>
-            <!-- Nombre de usuario-->
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <!-- Password de BD-->
-            <property name="javax.persistence.jdbc.password" value="pass"/>
-            <!-- Driver de conexión a la  BD-->
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/inventario_tiendavirtual"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="password"/>
+
+            <!-- Hibernate properties -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- HikariCP properties -->
+            <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/>
+            <property name="hibernate.hikari.maximumPoolSize" value="10"/>
+            <property name="hibernate.hikari.idleTimeout" value="30000"/>
+            <property name="hibernate.hikari.poolName" value="MyPool"/>
+
+            <!-- Test Comands -->
+            <property name="hibernate.generate_statistics" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+
         </properties>
     </persistence-unit>
 </persistence>

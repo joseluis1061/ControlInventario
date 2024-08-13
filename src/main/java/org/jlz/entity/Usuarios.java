@@ -1,6 +1,6 @@
 package org.jlz.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import org.apache.commons.codec.digest.DigestUtils;
 
 enum TipoUsuarios {
@@ -18,7 +18,7 @@ public class Usuarios {
   private Long idUsuario;
 
   @ManyToOne
-  @Column(name = "id_cliente")
+  @JoinColumn(name = "id_cliente")
   private Clientes cliente;
 
   @Column(name = "nombre_usuario")

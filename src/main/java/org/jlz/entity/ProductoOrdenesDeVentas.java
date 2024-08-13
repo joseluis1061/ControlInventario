@@ -1,6 +1,6 @@
 package org.jlz.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,38 +13,38 @@ public class ProductoOrdenesDeVentas {
   private Long idProductoOrdenDeVenta;
 
   @ManyToOne
-  @Column(name = "id_producto")
-  private Long idProducto;
+  @JoinColumn(name = "id_producto")
+  private Productos producto;
 
   @ManyToOne
-  @Column(name = "id_orden_de_venta")
-  private Long idOrdenDeVenta;
+  @JoinColumn(name = "id_orden_de_venta")
+  private OrdenesDeVenta ordenesDeVenta;
 
   //Constructors
   public ProductoOrdenesDeVentas() {}
 
-  public ProductoOrdenesDeVentas(Long idOrdenDeVenta, Long idProducto, Long idProductoOrdenDeVenta) {
-    this.idOrdenDeVenta = idOrdenDeVenta;
-    this.idProducto = idProducto;
+  public ProductoOrdenesDeVentas(OrdenesDeVenta ordenesDeVenta, Productos producto, Long idProductoOrdenDeVenta) {
+    this.ordenesDeVenta = ordenesDeVenta;
+    this.producto = producto;
     this.idProductoOrdenDeVenta = idProductoOrdenDeVenta;
   }
 
   // Setters and getters
 
-  public Long getIdOrdenDeVenta() {
-    return idOrdenDeVenta;
+  public OrdenesDeVenta getIdOrdenDeVenta() {
+    return ordenesDeVenta;
   }
 
-  public void setIdOrdenDeVenta(Long idOrdenDeVenta) {
-    this.idOrdenDeVenta = idOrdenDeVenta;
+  public void setIdOrdenDeVenta(OrdenesDeVenta idOrdenDeVenta) {
+    this.ordenesDeVenta = idOrdenDeVenta;
   }
 
-  public Long getIdProducto() {
-    return idProducto;
+  public Productos getIdProducto() {
+    return producto;
   }
 
-  public void setIdProducto(Long idProducto) {
-    this.idProducto = idProducto;
+  public void setIdProducto(Productos producto) {
+    this.producto = producto;
   }
 
   public Long getIdProductoOrdenDeVenta() {
@@ -58,9 +58,9 @@ public class ProductoOrdenesDeVentas {
   @Override
   public String toString() {
     return "ProductoOrdenesDeVentas{" +
-        "idOrdenDeVenta=" + idOrdenDeVenta +
+        "OrdenesDeVenta=" + ordenesDeVenta +
         ", idProductoOrdenDeVenta=" + idProductoOrdenDeVenta +
-        ", idProducto=" + idProducto +
+        ", producto=" + producto +
         '}';
   }
 }
