@@ -12,11 +12,16 @@ public class UtilEntity {
   // Método privado para construir el EntityManagerFactory
   private static EntityManagerFactory buildEntityManagerFactory() {
     // Crea y retorna un EntityManagerFactory usando la unidad de persistencia especificada
-    return Persistence.createEntityManagerFactory("persistenceInventory");
+    try {
+      return Persistence.createEntityManagerFactory("persistenceInventory");
+    }
+    catch (Exception e) {
+      // Manejo de excepciones adecuado
+      throw new RuntimeException("Error creating EntityManagerFactory", e);
+    }
   }
-
   // Método público para obtener un nuevo EntityManager
-  public static EntityManager getEntityManagerFactory() {
+  public static EntityManager getEntityManager() {
     // Crea y retorna un nuevo EntityManager usando el EntityManagerFactory
     return entityManagerFactory.createEntityManager();
   }

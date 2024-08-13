@@ -10,7 +10,7 @@ public class Almacenes {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
 
   @Column(name="id_almacen")
-  private int idAlmacen;
+  private Integer idAlmacen;
 
   @Column(name="nombre")
   private String nombre;
@@ -30,7 +30,7 @@ public class Almacenes {
   //Contructors
   public Almacenes() {}
 
-  public Almacenes(int capacidad, String direccion, String encargado, int idAlmacen, String nombre, String telefono) {
+  public Almacenes(int capacidad, String direccion, String encargado, Integer idAlmacen, String nombre, String telefono) {
     this.capacidad = capacidad;
     this.direccion = direccion;
     this.encargado = encargado;
@@ -63,7 +63,7 @@ public class Almacenes {
     this.encargado = encargado;
   }
 
-  public int getIdAlmacen() {
+  public Integer getIdAlmacen() {
     return idAlmacen;
   }
 

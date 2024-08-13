@@ -12,25 +12,25 @@ public class Categorias {
   private Long idCategoria;
 
   @Column(name = "nombre")
-  private int nombre;
+  private String nombre;
 
   @Column(name = "descripcion")
-  private int descripcion;
+  private String descripcion;
 
   //Contructors
   public Categorias() {}
 
-  public Categorias(int descripcion, Long idCategoria, int nombre) {
+  public Categorias(String descripcion, Long idCategoria, String nombre) {
     this.descripcion = descripcion;
     this.idCategoria = idCategoria;
     this.nombre = nombre;
   }
 
-  public int getDescripcion() {
+  public String getDescripcion() {
     return descripcion;
   }
 
-  public void setDescripcion(int descripcion) {
+  public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
   }
 
@@ -42,11 +42,11 @@ public class Categorias {
     this.idCategoria = idCategoria;
   }
 
-  public int getNombre() {
+  public String getNombre() {
     return nombre;
   }
 
-  public void setNombre(int nombre) {
+  public void setNombre(String nombre) {
     this.nombre = nombre;
   }
 
