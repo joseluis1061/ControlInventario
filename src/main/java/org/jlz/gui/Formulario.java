@@ -1,11 +1,12 @@
 package org.jlz.gui;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Formulario {
   private JFrame frame;
-  private JPanel Principal;
-  private JButton abrirParaIngresarComidaButton;
+  private JPanel principal;
+  private JButton puerta;
   private JButton a7Button;
   private JButton a8Button;
   private JButton a9Button;
@@ -18,16 +19,20 @@ public class Formulario {
   private JButton agregarButton;
   private JButton a0Button;
   private JButton cancelarButton;
+
   private JPanel Botones;
   private JTextField tiempo;
 
   public Formulario(){
     frame = new JFrame();
-    frame.setContentPane(Principal);
+    frame.setContentPane(principal);
     frame.setTitle("FORMULARIO");
     frame.setSize(600,400);
     frame.setVisible(true);
     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+    principal.add(puerta, BorderLayout.CENTER);
+    principal.add(Botones, BorderLayout.EAST);
   }
 
   public static void main(String[] args) {
