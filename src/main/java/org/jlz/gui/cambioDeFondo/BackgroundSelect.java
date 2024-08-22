@@ -13,7 +13,7 @@ public class BackgroundSelect {
     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     panel = new JPanel();
-    panel.setBackground(Color.BLUE);
+    panel.setBackground(Color.PINK);
 
     JButton btnBlue = new JButton("Azul");
     ChangeBackgrundBlueEvent changeBackgrundBlueEvent = new ChangeBackgrundBlueEvent(panel);
